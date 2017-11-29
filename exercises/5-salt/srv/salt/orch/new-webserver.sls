@@ -30,6 +30,7 @@ update-mine-data-from-new-minion:
 update-hwaas-online-grain:
   salt.function:
     - name: grains.append
+    - tgt: {{ pillar['target-minion'] }}
     - arg:
       - hwaas
       - online
